@@ -1,0 +1,133 @@
+/* Game container */
+#game-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-image: url('images/background.png');
+  background-size: cover;
+}
+
+/* Character */
+#character {
+  position: absolute;
+  top: 350px; /* Set this value to the height of the game container minus the height of the character */
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  background-image: url('images/character.png');
+  background-size: cover;
+  animation: character-animation 0.5s steps(4) infinite;
+  transform: translateX(-50%);
+}
+
+
+@keyframes character-animation {
+  from { background-position: 0px 0; }
+  to { background-position: -200px 0; }
+}
+
+/* Obstacles */
+.car {
+  position: absolute;
+  bottom: 0;
+  width: 100px;
+  height: 100px;
+  background-image: url('images/car.png');
+  background-size: cover;
+  animation: car-animation 2s linear infinite;
+}
+
+.rubble {
+  position: absolute;
+  bottom: 0;
+  width: 50px;
+  height: 50px;
+  background-image: url('images/rubble.png');
+  background-size: cover;
+  animation: rubble-animation 1s linear infinite;
+}
+
+.zombies {
+  position: absolute;
+  bottom: 0;
+  width: 100px;
+  height: 100px;
+  background-image: url('images/zombies.png');
+  background-size: cover;
+  animation: zombies-animation 3s linear infinite;
+}
+
+@keyframes car-animation {
+  from { left: 100%; }
+  to { left: -100%; }
+}
+
+@keyframes rubble-animation {
+  from { left: 100%; }
+  to { left: -100%; }
+}
+
+@keyframes zombies-animation {
+  from { left: 100%; }
+  to { left: -100%; }
+}
+
+/* Power-ups */
+.health-pack {
+  position: absolute;
+  bottom: 0;
+  width: 50px;
+  height: 50px;
+  background-image: url('images/health-pack.png');
+  background-size: cover;
+  animation: health-pack-animation 5s linear infinite;
+}
+
+@keyframes health-pack-animation {
+  from { left: 100%; }
+  to { left: -100%; }
+}
+
+/* Score container */
+#score-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  font-size: 24px;
+}
+
+/* Game over container */
+#game-over-container {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-size: 36px;
+}
+
+#game-over-container h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+#game-over-container p {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#restart-button {
+  font-size: 24px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #0066ff;
+  color: white;
+  cursor: pointer;
+}
+
+#restart-button:hover {
+  background-color: #0052cc;
+}
